@@ -1,19 +1,22 @@
-<mdb-navbar style="background: #1e0210" SideClass="navbar navbar-expand-lg white-text">
+<mdb-navbar style="background: #1e0210" SideClass="navbar navbar-expand-lg">
   <links>
 
-    <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-            <a class="nav-link waves-light" mdbRippleRadius>Inicio<span class="sr-only">(current)</span></a>
+    <ul style="color: white" class="nav navbar-nav" routerLinkActive="active">
+        <li class="nav-item">
+            <a class="nav-link waves-light" routerLink="home">Inicio</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-light" mdbRippleRadius>Proyectos</a>
+            <a class="nav-link waves-light">Proyectos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-light" [routerLink]="['members']">Miembros</a>
         </li>
         <li class="nav-item">
             <a class="nav-link waves-light" mdbRippleRadius>Contacto</a>
         </li>
         <li class="nav-item dropdown" dropdown>
             <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-            Basic dropdown<span class="caret"></span></a>
+            Más opciones<span class="caret"></span></a>
             <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
                 <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
                 <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
@@ -22,14 +25,17 @@
                 <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
             </div>
         </li>
+        <li class="btn btn-sm btn waves-light"mdbRippleRadius>
+            Desarrollador
+        </li>
 
     </ul>
     <ul id="social-container" class="navbar-nav ml-auto white-text nav-flex-icons">
         <li class="nav-item">
-            <a class="nav-link waves-effect waves-light"><i class="fa fa-twitter"></i></a>
+            <a class="nav-link waves-effect waves-light"><i class="fa fa-envelope"></i></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+            <a class="nav-link waves-effect waves-light"><i class="fa fa-facebook"></i></a>
         </li>
     </ul>
   </links>
