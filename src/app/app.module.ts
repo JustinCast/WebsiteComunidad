@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ROUTES } from './app.routing';
 import { MembersComponent } from './members/members.component';
-
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +17,8 @@ import { MembersComponent } from './members/members.component';
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],
