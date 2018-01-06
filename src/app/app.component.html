@@ -1,40 +1,40 @@
-<!--Navbar-->
-<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark transparent">
-           
-  <!-- Collapsible content -->
+<mdb-navbar style="background: #1e0210" SideClass="navbar navbar-expand-lg white-text">
   <links>
 
-      <!-- Links -->
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-              <a class="nav-link waves-light" mdbRippleRadius>Inicio<span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link waves-light" mdbRippleRadius>Proyectos</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link waves-light" mdbRippleRadius>Contacto</a>
-          </li>
+    <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+            <a class="nav-link waves-light" mdbRippleRadius>Inicio<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbRippleRadius>Proyectos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbRippleRadius>Contacto</a>
+        </li>
+        <li class="nav-item dropdown" dropdown>
+            <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
+            Basic dropdown<span class="caret"></span></a>
+            <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
+                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
+                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Something else here</a>
+                <div class="divider dropdown-divider"></div>
+                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
+            </div>
+        </li>
 
-          <!-- Dropdown -->
-          <li class="nav-item dropdown" dropdown>
-              <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
-              Basic dropdown<span class="caret"></span></a>
-              <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                  <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
-                  <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
-                  <a class="dropdown-item waves-light" mdbRippleRadius href="#">Something else here</a>
-                  <div class="divider dropdown-divider"></div>
-                  <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
-              </div>
-          </li>
-
-      </ul>
+    </ul>
+    <ul id="social-container" class="navbar-nav ml-auto white-text nav-flex-icons">
+        <li class="nav-item">
+            <a class="nav-link waves-effect waves-light"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-effect waves-light"><i class="fa fa-google-plus"></i></a>
+        </li>
+    </ul>
   </links>
-  <!-- Collapsible content -->
 
 </mdb-navbar>
-<!--/.Navbar-->
 <div>
   <router-outlet></router-outlet>
 </div>

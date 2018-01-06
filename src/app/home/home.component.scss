@@ -17,10 +17,43 @@ footer{
     width: 100%;
 }
 #go-to-projects:hover{
-    background-color: #4A148C;
+    background-color: #ff3547;
 }
 #home-card{
     width: 50%;
+    background:rgba(255,255,255,0.8);
     margin: auto;
-    margin-top: 15%;
+    margin-top: 3%;
+}
+#logo-comunidad{
+    height: 250px;
+    width: 200px;
+    margin: auto
+}
+#logo-tec{
+    height: 200px;
+    width: 340px;
+    margin: auto
+}
+#img-container{
+    display: inline-block;
+}
+img{
+    display: inline-block
+}
+#home-card:hover {
+    background-color: white;
+    color: black;
+}
+#card-body{
+    background-color: #1e0210
+}
+.color-text{
+    color: white;
+}
+#important-info{
+    font-size: 10px;
+    text-align: center;
+    margin: auto;
+    color: white
 }
