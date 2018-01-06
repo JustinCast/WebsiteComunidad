@@ -1,0 +1,26 @@
+#home-container{
+    margin: auto;
+    text-align: center;
+}
+#main-title{
+    margin-top: 20%;
+    background:rgba(100,100,180,0.7);
+    width: 100%;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+}
+footer{
+    bottom: 0px;
+    height: 70px;
+    position: absolute;
+    width: 100%;
+}
+#go-to-projects:hover{
+    background-color: #4A148C;
+}
+#home-card{
+    width: 50%;
+    margin: auto;
+    margin-top: 15%;
+}
