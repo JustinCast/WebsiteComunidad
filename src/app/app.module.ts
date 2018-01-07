@@ -7,6 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { ROUTES } from './app.routing';
 import { MembersComponent } from './members/members.component';
 import { HttpClientModule } from "@angular/common/http";
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MatIconModule, MatButtonModule } from "@angular/material";
+import 'hammerjs';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { HttpClientModule } from "@angular/common/http";
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(ROUTES),
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatIconModule, 
+    MatButtonModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   providers: [],

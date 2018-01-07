@@ -9,8 +9,6 @@ import { User } from '../models/User';
 })
 export class MembersComponent implements OnInit {
   private readonly githubUsers: Array<any> = [
-    'JustinCast',
-    'migueladanrm',
     'Josu8e',
     'Baxi19',
     'Eliomar-Rodriguez',
@@ -23,7 +21,9 @@ export class MembersComponent implements OnInit {
     'Lazuli26',
     'LChacon',
     'kemblyqa',
-    'JoseCHidalgo'
+    'JoseCHidalgo',
+    'JustinCast',
+    'migueladanrm',
   ]
   private readonly BASE_API_URL = 'https://api.github.com/users/'
   public members: Array<Member> = []
