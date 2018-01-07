@@ -1,14 +1,15 @@
 export class Member {
     private name: string
-    private lastName: string
     private specialty: string
     private aboutDescription: string
-
-    constructor(name: string, lastName: string, specialty: string, aboutDescription: string) {
+    private followers: number
+    private pictureUrl: string
+    constructor(name: string, specialty: string, aboutDescription: string, followers: number, pictureUrl: string) {
         this.name = name
-        this.lastName = lastName
         this.specialty = specialty
         this.aboutDescription = aboutDescription
+        this.followers = followers
+        this.pictureUrl = pictureUrl
     }
     /**
      * get Name
@@ -23,20 +24,6 @@ export class Member {
      */
     public set Name(name: string) {
         this.name = name
-    }
-
-    /**
-     * get LastName
-     */
-    public get LastName(): string {
-        return this.lastName
-    }
-
-    /**
-     * set LastName
-     */
-    public set LastName(lastName: string) {
-        this.lastName = lastName
     }
 
     /**
@@ -65,5 +52,19 @@ export class Member {
      */
     public set AboutDescription(aboutDescription: string) {
         this.aboutDescription = aboutDescription
+    }
+
+    /**
+     * get Followers
+     */
+    public get Followers(): number {
+        return this.followers
+    }
+
+    /**
+     * set Followers
+     */
+    public set Followers(followers: number) {
+        this.followers = followers
     }
 }
