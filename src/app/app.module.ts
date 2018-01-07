@@ -12,13 +12,15 @@ import { MatIconModule, MatButtonModule, MatDialogModule, MatExpansionModule } f
 import 'hammerjs';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogService } from './dialog/dialog.service';
+import { ErrorHandleComponent } from './error-handle/error-handle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     MembersComponent,
-    DialogComponent
+    DialogComponent,
+    ErrorHandleComponent
   ],
   imports: [
     BrowserModule,

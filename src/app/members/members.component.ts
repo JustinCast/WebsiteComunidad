@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component,OnInit, OnDestroy } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Member } from '../models/Member';
 import { User } from '../models/User';
