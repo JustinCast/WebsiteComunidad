@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Member } from '../models/Member';
 import { User } from '../models/User';
@@ -8,7 +8,7 @@ import { DialogService } from '../dialog/dialog.service';
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.scss']
 })
-export class MembersComponent implements OnInit {
+export class MembersComponent implements OnInit, OnDestroy {
   private readonly githubUsers: Array<any> = [
     'Josu8e',
     'Baxi19',
@@ -55,6 +55,9 @@ export class MembersComponent implements OnInit {
       )
     });
   }
+  ngOnDestroy() {
+
+  }
 
   private setBioMaxLeng(bio: string): string{
     let maxLenght: number = 67
@@ -62,7 +65,7 @@ export class MembersComponent implements OnInit {
       bio = 'Sin Bio'
       return bio
     }
-    if(bio.length > maxLenght)){
+    if(bio.length > maxLenght){
       bio = bio.substring(0, maxLenght)
       bio += '...'
     }
@@ -76,7 +79,7 @@ export class MembersComponent implements OnInit {
 
   openDialog(): void {
     this.dialogService
-    .confirm('There is not enough data', 'Let me add a little experience, and I will notice you')
-    .subscribe(res => this.result = res);
+    .confirm('', '')
+    .subscribe();
   }
 }

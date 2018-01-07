@@ -8,7 +8,7 @@ import { ROUTES } from './app.routing';
 import { MembersComponent } from './members/members.component';
 import { HttpClientModule } from "@angular/common/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatIconModule, MatButtonModule, MatDialogModule } from "@angular/material";
+import { MatIconModule, MatButtonModule, MatDialogModule, MatExpansionModule } from "@angular/material";
 import 'hammerjs';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogService } from './dialog/dialog.service';
@@ -29,6 +29,7 @@ import { DialogService } from './dialog/dialog.service';
     MatIconModule, 
     MatButtonModule,
     MatDialogModule,
+    MatExpansionModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],

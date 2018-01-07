@@ -6,7 +6,7 @@ export class Member {
     private following: number
     private pictureUrl: string   
     private company: string
-    private userName: string,
+    private userName: string
     private repos: number
     private gists: number
     constructor(

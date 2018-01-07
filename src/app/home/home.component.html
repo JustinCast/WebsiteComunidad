@@ -8,19 +8,40 @@
       </div>
       <!--/.Card image-->
       <!--Card content-->
-      <div id="card-body" class="card-body">
-          <!--Title-->
-          <h4 class="card-title color-text">Comunidad de Aplicaciones Móviles TEC SSC</h4>
-          <hr style="background-color: white; border-top: dotted 1px">
-          <!--Text-->
-          <p class="card-text color-text">
-              Grupo que desarrolla proyectos para toda la Comunidad del Instituto Tecnológico de Costa Rica. De igual manera se desarrollan
-              proyectos externos.
-          </p>
-          <button id="go-to-projects" class="btn btn-outline-white btn-sm">Proyectos</button>
-          <button id="meet-us" class="btn btn-danger btn-sm">Conócenos</button>
-      </div>
-      <!--/.Card content-->
+    <div id="card-body" class="card-body">
+        <!--Title-->
+        <h4 class="card-title color-text">Comunidad de Aplicaciones Móviles TEC SSC</h4>
+        <hr style="background-color: white; border-top: dotted 1px">
+        <!--Text-->
+        <p class="card-text color-text">
+            Grupo de estudiantes desarrolladores del Instituto Tecnológico de Costa Rica en su sede de San Carlos.
+        </p>
+        <mat-accordion color="accent">
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                        (closed)="panelOpenState = false">
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Más Info
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{panelOpenState ? 'Cerrar' : 'Abrir'}}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <small>
+                    El objetivo de este grupo es crear aplicaciones que sean de utilidad para toda la población de la Universidad.
+                    Así mismo esta iniciativa representa una importante ayuda para los estudiantes desarrolladores, dado que se obtienen beneficios
+                    por realizar esta labor. <br>
+                    Este grupo también realiza proyectos externos al Tecnológico, lo que a su vez provee experiencia que va ser de gran importancia
+                    a la hora de insertarse al mercado laboral.
+                </small>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div id="btn-container" class="container">
+            <button id="go-to-projects" class="btn btn-outline-white btn-sm">Proyectos</button>
+            <button id="meet-us" class="btn btn-danger btn-sm">Conócenos</button>
+        </div>
+    </div>
+    <!--/.Card content-->
   </div>
   <hr>
   <small id="important-info">
