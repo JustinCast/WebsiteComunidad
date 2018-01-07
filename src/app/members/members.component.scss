@@ -1,8 +1,30 @@
 #members-list{
     list-style-type: none;
-    padding: 0
+    padding: 0;
+    text-align: center 
 }
 .members-li{
     text-align: center;
-    width: 25%
+    width: 15%;
+    display: inline-block;
+    margin-left: 1% ;
+    margin-top: 1%;
+}
+.avatar{
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    border-radius: 25px;
+    margin-top: 5% 
+}
+#details-list{
+    list-style-type: none;
+    padding: 0; 
+}
+.details-li{
+    display: inline-block;
+    font-size: 10px
+}
+p{
+    font-size: 13px
 }

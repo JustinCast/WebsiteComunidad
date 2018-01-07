@@ -1,8 +1,19 @@
 <ul id="members-list">
   <li class="card container members-li" *ngFor="let m of members">
-    <img src="{{m.pictureUrl}}" alt="Picture">
-    <h3>{{m.name}}</h3>
-    <p>{{m.aboutDescription}}</p>
-    <p>{{m.followers}}</p>
+    <img class="avatar" src="{{m.pictureUrl}}" alt="Picture">
+    <h6>{{m.name}}</h6>
+    <i><small><strong>Bio: </strong>{{m.aboutDescription}}</small></i>
+    <p><strong>Grupo: </strong>{{m.company}}</p>
+    <hr style="background-color: white; border-top: line 1px">
+    <ul id="details-list">
+      <li class="details-li"><i class="fa fa-users" aria-hidden="true"></i> {{m.followers}} </li>
+      |
+      <li class="details-li"><i class="fa fa-user" aria-hidden="true"></i> {{m.following}} </li>
+      |
+      <li class="details-li"><i class="fa fa-folder" aria-hidden="true"></i> {{m.repos}} </li>
+      |
+      <li class="details-li"><i class="fa fa-file-text" aria-hidden="true"></i> {{m.gists}} </li>
+    </ul>
+    <a href="https://github.com/{{m.userName}}" class="btn btn-deep-purple btn-sm">Ver en Github</a>
   </li>
 </ul>

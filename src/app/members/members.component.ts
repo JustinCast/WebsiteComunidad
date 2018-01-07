@@ -9,7 +9,21 @@ import { User } from '../models/User';
 })
 export class MembersComponent implements OnInit {
   private readonly githubUsers: Array<any> = [
-    'JustinCast'
+    'JustinCast',
+    'migueladanrm',
+    'Josu8e',
+    'Baxi19',
+    'Eliomar-Rodriguez',
+    'EstebanBlanco',
+    'jafetSuarez',
+    'alejo18',
+    'ErwinSalas',
+    'CarlosMarioV',
+    'jvsquez19',
+    'Lazuli26',
+    'LChacon',
+    'kemblyqa',
+    'JoseCHidalgo'
   ]
   private readonly BASE_API_URL = 'https://api.github.com/users/'
   public members: Array<Member> = []
@@ -24,9 +38,14 @@ export class MembersComponent implements OnInit {
           this.members.unshift(new Member(
             data.name,
             "",
-            data.bio,
+            this.setBioMaxLeng(data.bio),
             data.followers,
-            data.avatar_url
+            data.following,
+            data.avatar_url,
+            this.setCompany(data.company),
+            data.login,
+            data.public_repos,
+            data.public_gists
           ))
         },
         err => {
@@ -34,6 +53,24 @@ export class MembersComponent implements OnInit {
         }
       )
     });
+  }
+
+  private setBioMaxLeng(bio: string): string{
+    let maxLenght: number = 67
+    if(bio === null){
+      bio = 'Sin Bio'
+      return bio
+    }
+    if(bio.length > maxLenght)){
+      bio = bio.substring(0, maxLenght)
+      bio += '...'
+    }
+    return bio
+  }
+  private setCompany(company: string): string{
+    if(company === null)
+      company = 'No hay grupo'
+    return company
   }
 
 }
