@@ -8,14 +8,17 @@ import { ROUTES } from './app.routing';
 import { MembersComponent } from './members/members.component';
 import { HttpClientModule } from "@angular/common/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatIconModule, MatButtonModule } from "@angular/material";
+import { MatIconModule, MatButtonModule, MatDialogModule } from "@angular/material";
 import 'hammerjs';
+import { DialogComponent } from './dialog/dialog.component';
+import { DialogService } from './dialog/dialog.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    MembersComponent
+    MembersComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -24,10 +27,14 @@ import 'hammerjs';
     HttpClientModule,
     BrowserAnimationsModule,
     MatIconModule, 
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
-  providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  providers: [DialogService],
+  entryComponents: [
+    DialogComponent
+  ],
 })
 export class AppModule { }

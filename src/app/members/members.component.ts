@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Member } from '../models/Member';
 import { User } from '../models/User';
+import { DialogService } from '../dialog/dialog.service';
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
@@ -28,7 +29,7 @@ export class MembersComponent implements OnInit {
   private readonly BASE_API_URL = 'https://api.github.com/users/'
   public members: Array<Member> = []
 
-  constructor(public _http: HttpClient) { }
+  constructor(public _http: HttpClient, public dialogService: DialogService) { }
 
   ngOnInit() {
     this.githubUsers.forEach(user => {
@@ -73,4 +74,9 @@ export class MembersComponent implements OnInit {
     return company
   }
 
+  openDialog(): void {
+    this.dialogService
+    .confirm('There is not enough data', 'Let me add a little experience, and I will notice you')
+    .subscribe(res => this.result = res);
+  }
 }
