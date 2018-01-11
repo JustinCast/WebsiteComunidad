@@ -40,8 +40,11 @@ export class AdminComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result)
-      this.data.githubUsers[index] = result
+      if(result !== undefined){
+        this.data.githubUsers[index] = result
+        this.githubUsers = this.data.githubUsers
+        this.openSnackBar("Usuario editado correctamente", "Ok")
+      }
     });
-    this.githubUsers = this.data.githubUsers
   }
 }
