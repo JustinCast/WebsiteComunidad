@@ -26,6 +26,8 @@ import { ErrorHandleComponent } from './error-handle/error-handle.component';
 import { AdminComponent } from './admin/admin.component';
 import { DataService } from './data.service';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
+import { YesOrNoComponent } from './yes-or-no/yes-or-no.component';
+import { YesOrNoService } from './yes-or-no.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
     DialogComponent,
     ErrorHandleComponent,
     AdminComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    YesOrNoComponent
   ],
   imports: [
     BrowserModule,
@@ -56,10 +59,11 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
-  providers: [DialogService, DataService],
+  providers: [DialogService, DataService, YesOrNoService],
   entryComponents: [
     DialogComponent,
-    EditDialogComponent
+    EditDialogComponent,
+    YesOrNoComponent
   ],
 })
 export class AppModule { }

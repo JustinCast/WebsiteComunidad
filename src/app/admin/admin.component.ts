@@ -4,6 +4,7 @@ import {
   MatSnackBar, MatDialog 
 } from '@angular/material';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { YesOrNoService } from '../yes-or-no.service';
 
 @Component({
   selector: 'app-admin',
@@ -15,7 +16,8 @@ export class AdminComponent implements OnInit {
   constructor(
     public data: DataService, 
     public snackBar: MatSnackBar,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    public yesOrNoDialog: YesOrNoService
   ) { }
 
   ngOnInit() {
@@ -23,9 +25,16 @@ export class AdminComponent implements OnInit {
   }
 
   deleteUser(user: any) {
-    this.data.githubUsers.splice(user, 1)
-    this.githubUsers = this.data.githubUsers
-    this.openSnackBar("Usuario eliminado", "Ok")
+    this.yesOrNoDialog
+    .confirm('', '')
+    .subscribe(result =>{
+      console.log(result)
+      if(result) {
+        this.data.githubUsers.splice(user, 1)
+        this.githubUsers = this.data.githubUsers
+        this.openSnackBar("Usuario eliminado", "Ok")
+      }
+    })
   }
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
@@ -45,6 +54,6 @@ export class AdminComponent implements OnInit {
         this.githubUsers = this.data.githubUsers
         this.openSnackBar("Usuario editado correctamente", "Ok")
       }
-    });
+    })
   }
 }
