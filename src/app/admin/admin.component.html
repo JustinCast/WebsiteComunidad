@@ -1,13 +1,15 @@
 <div id="admin-container" class="container card">
-  <mat-selection-list #u>
-    <mat-list-option style="font-size: 15px" *ngFor="let u of githubUsers">
-      <div class="container">
-        <p>{{u}}</p>
+  <mat-list>
+    <mat-list-item style="font-size: 15px" *ngFor="let u of githubUsers">
+      <p>{{u}}</p>
+      <div id="actions-container" class="container">
+        <button mat-button color="primary">
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-button color="warn">
+            <mat-icon>delete</mat-icon>
+        </button>
       </div>
-    </mat-list-option>
-  </mat-selection-list>
-  
-  <p>
-    Options selected: {{u.selectedOptions.selected.length}}
-  </p>
+    </mat-list-item>
+  </mat-list>
 </div>
