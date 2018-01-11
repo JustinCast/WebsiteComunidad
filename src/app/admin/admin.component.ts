@@ -24,13 +24,13 @@ export class AdminComponent implements OnInit {
     this.githubUsers = this.data.githubUsers
   }
 
-  deleteUser(user: any) {
+  deleteUser(index: number) {
     this.yesOrNoDialog
     .confirm('', '')
     .subscribe(result =>{
       console.log(result)
-      if(result) {
-        this.data.githubUsers.splice(user, 1)
+      if(result) {  
+        this.data.githubUsers.splice(index, 1)
         this.githubUsers = this.data.githubUsers
         this.openSnackBar("Usuario eliminado", "Ok")
       }
