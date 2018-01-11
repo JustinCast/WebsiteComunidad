@@ -27,7 +27,9 @@ import { AdminComponent } from './admin/admin.component';
 import { DataService } from './data.service';
 import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { YesOrNoComponent } from './yes-or-no/yes-or-no.component';
-import { YesOrNoService } from './yes-or-no.service';
+import { YesOrNoService } from './yes-or-no/yes-or-no.service';
+import { AuthComponent } from './auth/auth.component';
+
 
 @NgModule({
   declarations: [
@@ -38,7 +40,8 @@ import { YesOrNoService } from './yes-or-no.service';
     ErrorHandleComponent,
     AdminComponent,
     EditDialogComponent,
-    YesOrNoComponent
+    YesOrNoComponent,
+    AuthComponent
   ],
   imports: [
     BrowserModule,

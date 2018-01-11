@@ -4,7 +4,8 @@ import {
   MatSnackBar, MatDialog 
 } from '@angular/material';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
-import { YesOrNoService } from '../yes-or-no.service';
+import { YesOrNoService } from '../yes-or-no/yes-or-no.service';
+
 
 @Component({
   selector: 'app-admin',

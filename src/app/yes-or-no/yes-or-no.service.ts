@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material';
-import { YesOrNoComponent } from './yes-or-no/yes-or-no.component';
+import { YesOrNoComponent } from './yes-or-no.component';
 import { Observable } from 'rxjs/Observable';
 
 @Injectable()
