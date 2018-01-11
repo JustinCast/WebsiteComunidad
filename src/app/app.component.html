@@ -18,15 +18,10 @@
             <a dropdownToggle mdbRippleRadius type="button" class="nav-link dropdown-toggle waves-light" mdbRippleRadius>
             Más opciones<span class="caret"></span></a>
             <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Action</a>
-                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Another action</a>
-                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Something else here</a>
+                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Desarrollador</a>
                 <div class="divider dropdown-divider"></div>
-                <a class="dropdown-item waves-light" mdbRippleRadius href="#">Separated link</a>
+                <a class="dropdown-item waves-light" mdbRippleRadius [routerLink]="['/admin']">Administrar Miembros</a>
             </div>
-        </li>
-        <li class="btn btn-sm btn waves-light"mdbRippleRadius>
-            Desarrollador
         </li>
 
     </ul>

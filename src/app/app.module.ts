@@ -8,11 +8,13 @@ import { ROUTES } from './app.routing';
 import { MembersComponent } from './members/members.component';
 import { HttpClientModule } from "@angular/common/http";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MatIconModule, MatButtonModule, MatDialogModule, MatExpansionModule } from "@angular/material";
+import { MatIconModule, MatButtonModule, MatDialogModule, MatExpansionModule, MatListModule } from "@angular/material";
 import 'hammerjs';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogService } from './dialog/dialog.service';
 import { ErrorHandleComponent } from './error-handle/error-handle.component';
+import { AdminComponent } from './admin/admin.component';
+import { DataService } from './data.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { ErrorHandleComponent } from './error-handle/error-handle.component';
     HomeComponent,
     MembersComponent,
     DialogComponent,
-    ErrorHandleComponent
+    ErrorHandleComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
@@ -31,11 +34,12 @@ import { ErrorHandleComponent } from './error-handle/error-handle.component';
     MatIconModule, 
     MatButtonModule,
     MatDialogModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatListModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
-  providers: [DialogService],
+  providers: [DialogService, DataService],
   entryComponents: [
     DialogComponent
   ],

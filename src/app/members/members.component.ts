@@ -1,37 +1,23 @@
-import { Component,OnInit, OnDestroy } from '@angular/core';
+import { Component,OnInit, OnDestroy, Input } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Member } from '../models/Member';
 import { User } from '../models/User';
 import { DialogService } from '../dialog/dialog.service';
+import { DataService } from '../data.service';
 @Component({
   selector: 'app-members',
   templateUrl: './members.component.html',
-  styleUrls: ['./members.component.scss']
+  styleUrls: ['./members.component.scss'],
 })
 export class MembersComponent implements OnInit, OnDestroy {
-  private readonly githubUsers: Array<any> = [
-    'Josu8e',
-    'Baxi19',
-    'Eliomar-Rodriguez',
-    'EstebanBlanco',
-    'jafetSuarez',
-    'alejo18',
-    'ErwinSalas',
-    'CarlosMarioV',
-    'jvsquez19',
-    'Lazuli26',
-    'LChacon',
-    'kemblyqa',
-    'JoseCHidalgo',
-    'JustinCast',
-    'migueladanrm',
-  ]
+  githubUsers: Array<any>
   private readonly BASE_API_URL = 'https://api.github.com/users/'
   public members: Array<Member> = []
 
-  constructor(public _http: HttpClient, public dialogService: DialogService) { }
+  constructor(public _http: HttpClient, public dialogService: DialogService, public data: DataService) { }
 
   ngOnInit() {
+    this.githubUsers = this.data.githubUsers
     this.githubUsers.forEach(user => {
       this._http.get<User>(this.BASE_API_URL + user)
       .subscribe(
