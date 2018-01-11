@@ -1,8 +1,10 @@
 <div id="admin-container" class="container card">
-  <mat-list>
-    <mat-list-item style="font-size: 15px" *ngFor="let u of githubUsers">
-      <p>{{u}}</p>
-      <div id="actions-container" class="container">
+  <mat-list style="width: 100%; padding: 0; margin-bottom: 1%">
+    <mat-list-item class="card" style="font-size: 15px; margin-top: 1%;" *ngFor="let u of githubUsers">
+      <div style="">
+        <p>{{u}}</p>
+      </div>
+      <div id="actions-container">
         <button mat-button color="primary">
             <mat-icon>edit</mat-icon>
         </button>
