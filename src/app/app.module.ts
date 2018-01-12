@@ -30,6 +30,7 @@ import { YesOrNoComponent } from './yes-or-no/yes-or-no.component';
 import { YesOrNoService } from './yes-or-no/yes-or-no.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
+import { AUTH_PROVIDERS } from './auth/authentication.service';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import { AuthService } from './auth/auth.service';
     DialogService, 
     DataService, 
     YesOrNoService,
-    AuthService
+    AuthService,
+    AUTH_PROVIDERS
   ],
   entryComponents: [
     DialogComponent,
