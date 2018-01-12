@@ -1,3 +1,15 @@
-<p>
-  auth works!
-</p>
+<div id="auth-dialog" class="card container">
+  <h1>Autenticación</h1>
+  <small>Solamente los usuarios autorizados por <strong>Justin Castillo</strong> pueden ingresar</small>
+  <form>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Clave usuario">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <input matInput type="password" placeholder="Contraseña">
+    </mat-form-field>
+    <div>
+      <button id="login-btn" mat-button color="primary">Ingresar</button>
+    </div>
+  </form>
+</div>

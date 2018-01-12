@@ -29,6 +29,7 @@ import { EditDialogComponent } from './edit-dialog/edit-dialog.component';
 import { YesOrNoComponent } from './yes-or-no/yes-or-no.component';
 import { YesOrNoService } from './yes-or-no/yes-or-no.service';
 import { AuthComponent } from './auth/auth.component';
+import { AuthService } from './auth/auth.service';
 
 
 @NgModule({
@@ -62,11 +63,17 @@ import { AuthComponent } from './auth/auth.component';
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
-  providers: [DialogService, DataService, YesOrNoService],
+  providers: [
+    DialogService, 
+    DataService, 
+    YesOrNoService,
+    AuthService
+  ],
   entryComponents: [
     DialogComponent,
     EditDialogComponent,
-    YesOrNoComponent
+    YesOrNoComponent,
+    AuthComponent
   ],
 })
 export class AppModule { }
