@@ -42,8 +42,9 @@ export class AuthComponent implements OnInit {
     }else {
       this.credentialState = true
       this.openSnackBar('Inicio de sesión exitoso', 'Ok')
+      this.dialogRef.close()
     }
-    return false
+    return true
   }
 
   logout(): boolean {
