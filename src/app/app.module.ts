@@ -31,6 +31,7 @@ import { YesOrNoService } from './yes-or-no/yes-or-no.service';
 import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { AUTH_PROVIDERS } from './auth/authentication.service';
+import { LogguedInGuard } from './auth/loggued-in.guard';
 
 
 @NgModule({
@@ -69,7 +70,8 @@ import { AUTH_PROVIDERS } from './auth/authentication.service';
     DataService, 
     YesOrNoService,
     AuthService,
-    AUTH_PROVIDERS
+    AUTH_PROVIDERS,
+    LogguedInGuard
   ],
   entryComponents: [
     DialogComponent,
