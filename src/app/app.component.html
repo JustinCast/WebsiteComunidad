@@ -1,4 +1,4 @@
-<mdb-navbar SideClass="navbar navbar-expand-lg">
+<mdb-navbar SideClass="navbar navbar-expand-lg elegant-color">
   <links>
 
     <ul style="color: white" class="nav navbar-nav" routerLinkActive="active">
@@ -22,6 +22,9 @@
                 <div class="divider dropdown-divider"></div>
                 <a class="dropdown-item waves-light" mdbRippleRadius (click)="openDialog()">Administrar Miembros</a>
             </div>
+        </li>
+        <li mat-raised-button *ngIf="authentication.getUser()" (click)="logout()" class="btn danger-color btn-sm" id="logoutBtn">
+            Salir
         </li>
 
     </ul>

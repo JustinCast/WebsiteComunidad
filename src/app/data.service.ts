@@ -20,6 +20,11 @@ export class DataService implements OnInit {
       'JoseCHidalgo',
       'JustinCast',
       'migueladanrm',
+      'Marcofeli',
+      'BrayanArrieta',
+      'juliomontano1997',
+      'angelomedina',
+      'xRaGeX'
     ]
   }
   public get Users(): Array<any> {
