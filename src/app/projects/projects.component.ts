@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Project } from '../models/Project';
+import { Member } from '../models/Member';
 
 @Component({
   selector: 'app-projects',
@@ -6,8 +8,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
-
-  constructor() { }
+  readonly projects: Array<Project>
+  constructor() { 
+  }
 
   ngOnInit() {
   }

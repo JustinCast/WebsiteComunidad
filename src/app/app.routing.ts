@@ -4,6 +4,7 @@ import { MembersComponent } from "./members/members.component";
 import { ErrorHandleComponent } from "./error-handle/error-handle.component";
 import { AdminComponent } from "./admin/admin.component";
 import { LogguedInGuard } from "./auth/loggued-in.guard";
+import { ProjectsComponent } from "./projects/projects.component";
 export const ROUTES: Routes = [
     {
         path: '', redirectTo: 'home', pathMatch: 'full'
@@ -13,6 +14,9 @@ export const ROUTES: Routes = [
     },
     {
         path: 'members', component: MembersComponent
+    },
+    {
+        path: 'projects', component: ProjectsComponent
     },
     {
         path: 'admin', component: AdminComponent, canActivate: [LogguedInGuard]
