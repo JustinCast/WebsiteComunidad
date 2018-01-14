@@ -32,6 +32,7 @@ import { AuthComponent } from './auth/auth.component';
 import { AuthService } from './auth/auth.service';
 import { AUTH_PROVIDERS } from './auth/authentication.service';
 import { LogguedInGuard } from './auth/loggued-in.guard';
+import { ProjectsComponent } from './projects/projects.component';
 
 
 @NgModule({
@@ -44,7 +45,8 @@ import { LogguedInGuard } from './auth/loggued-in.guard';
     AdminComponent,
     EditDialogComponent,
     YesOrNoComponent,
-    AuthComponent
+    AuthComponent,
+    ProjectsComponent
   ],
   imports: [
     BrowserModule,
