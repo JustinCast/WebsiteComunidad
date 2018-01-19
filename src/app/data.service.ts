@@ -5,46 +5,22 @@ import { Member } from './models/Member';
 import { MemberResponse } from './models/MemberResponse';
 
 @Injectable()
-export class DataService implements OnInit {
-  readonly githubUsers: Array<any> = []
-  members: Array<Member> = []
+export class DataService {
+  githubUsers: Array<any> = new Array<any>()
+  members: Array<any> = new Array<any>()
   constructor(private _http: HttpClient) {
-    this.ngOnInit()
-    // = [
-    //   'Josu8e',
-    //   'Baxi19',
-    //   'Eliomar-Rodriguez',
-    //   'EstebanBlanco',
-    //   'jafetSuarez',
-    //   'alejo18',
-    //   'ErwinSalas',
-    //   'CarlosMarioV',
-    //   'jvsquez19',
-    //   'Lazuli26',
-    //   'LChacon',
-    //   'kemblyqa',
-    //   'JoseCHidalgo',
-    //   'JustinCast',
-    //   'migueladanrm',
-    //   'Marcofeli',
-    //   'BrayanArrieta',
-    //   'juliomontano1997',
-    //   'angelomedina',
-    //   'xRaGeX'
-    // ]
+    this.getData()
   }
-  public get Users(): Array<any> {
-    return this.githubUsers
-  }
-  
-  ngOnInit(): void {
+
+  getData(): void {
     console.log(environment.SERVER_BASE_URL + 'miembros')
-    this._http.get<MemberResponse>(environment.SERVER_BASE_URL + 'miembros')
+    this._http.get<Member[]>(environment.SERVER_BASE_URL + 'miembros')
       .subscribe(
         success => {
           // console.log(success)
-          this.members = success.members
+          this.members = success
           console.log(this.members)
+          this.extractGithubUsernames()
         },
         err => {
           console.log(err)
@@ -55,7 +31,8 @@ export class DataService implements OnInit {
 
   private extractGithubUsernames(): void {
     this.members.forEach(m => {
-      this.githubUsers.unshift(m.GithubUser)
+      console.log(m.github_user)
+      this.githubUsers.unshift(m.github_user)
     })
   }
 }

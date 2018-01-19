@@ -6,6 +6,8 @@ import { Member } from "./Member";
  * - La interfaz 'Member.interface.ts' es parte de esta interfaz
  */
 export interface MemberResponse {
-    code: number,
-    members: Array<Member>
+    nombre: string,
+    apellidos: string,
+    especialidad: string,
+    github_user: string
 }
