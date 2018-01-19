@@ -1,15 +1,16 @@
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
-import { HttpClient } from '@angular/common/http/src/client';
-import { MemberInterface } from './models/Member.interface';
+import { HttpClient } from '@angular/common/http';
 import { Member } from './models/Member';
+import { MemberResponse } from './models/MemberResponse';
 
 @Injectable()
 export class DataService implements OnInit {
-  readonly githubUsers: Array<any>
-  members: Array<Member>
+  readonly githubUsers: Array<any> = []
+  members: Array<Member> = []
   constructor(private _http: HttpClient) {
-    this.githubUsers = [] // = [
+    this.ngOnInit()
+    // = [
     //   'Josu8e',
     //   'Baxi19',
     //   'Eliomar-Rodriguez',
@@ -37,17 +38,24 @@ export class DataService implements OnInit {
   }
   
   ngOnInit(): void {
-    this._http.get<MemberInterface>(environment.SERVER_BASE_URL + 'miembros')
+    console.log(environment.SERVER_BASE_URL + 'miembros')
+    this._http.get<MemberResponse>(environment.SERVER_BASE_URL + 'miembros')
       .subscribe(
         success => {
-          this.members.unshift(new Member(
-            success.nombre,
-            success.apellidos,
-            success.especialidad,
-            success.github_user
-          ))
-          this.githubUsers.unshift(success.github_user)
+          // console.log(success)
+          this.members = success.members
+          console.log(this.members)
+        },
+        err => {
+          console.log(err)
         }
       )
+    
+  }
+
+  private extractGithubUsernames(): void {
+    this.members.forEach(m => {
+      this.githubUsers.unshift(m.GithubUser)
+    })
   }
 }
