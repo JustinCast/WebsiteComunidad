@@ -1,10 +1,13 @@
 import { Injectable, OnInit } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http/src/client';
+import { MemberInterface } from './models/Member.interface';
+import { Member } from './models/Member';
 
 @Injectable()
 export class DataService implements OnInit {
   readonly githubUsers: Array<any>
+  members: Array<Member>
   constructor(private _http: HttpClient) {
     this.githubUsers = [] // = [
     //   'Josu8e',
@@ -34,6 +37,17 @@ export class DataService implements OnInit {
   }
   
   ngOnInit(): void {
-    this._http.get
+    this._http.get<MemberInterface>(environment.SERVER_BASE_URL + 'miembros')
+      .subscribe(
+        success => {
+          this.members.unshift(new Member(
+            success.nombre,
+            success.apellidos,
+            success.especialidad,
+            success.github_user
+          ))
+          this.githubUsers.unshift(success.github_user)
+        }
+      )
   }
 }

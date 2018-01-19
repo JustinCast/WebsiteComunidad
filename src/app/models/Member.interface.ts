@@ -1,6 +1,6 @@
 export interface MemberInterface {
-    nombre: String,
-    apellidos: String,
-    especialidad: String,
-    github_user: String
+    nombre: string,
+    apellidos: string,
+    especialidad: string,
+    github_user: string
 }
