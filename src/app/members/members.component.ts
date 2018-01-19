@@ -1,6 +1,6 @@
 import { Component,OnInit, OnDestroy, Input } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { Member } from '../models/Member';
+import { GithubUser } from '../models/GithubUser';
 import { User } from '../models/User';
 import { DialogService } from '../dialog/dialog.service';
 import { DataService } from '../data.service';
@@ -12,7 +12,7 @@ import { DataService } from '../data.service';
 export class MembersComponent implements OnInit, OnDestroy {
   githubUsers: Array<any>
   private readonly BASE_API_URL = 'https://api.github.com/users/'
-  public members: Array<Member> = []
+  public members: Array<GithubUser> = []
 
   constructor(public _http: HttpClient, public dialogService: DialogService, public data: DataService) { }
 
@@ -22,7 +22,7 @@ export class MembersComponent implements OnInit, OnDestroy {
       this._http.get<User>(this.BASE_API_URL + user)
       .subscribe(
         data => {
-          this.members.unshift(new Member(
+          this.members.unshift(new GithubUser(
             data.name,
             "",
             this.setBioMaxLeng(data.bio),

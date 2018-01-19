@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../models/Project';
-import { Member } from '../models/Member';
+import { GithubUser } from '../models/GithubUser';
 
 @Component({
   selector: 'app-projects',

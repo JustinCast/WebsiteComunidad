@@ -1,15 +1,15 @@
-import { Member } from "./Member";
+import { GithubUser } from "./GithubUser";
 
 export class Project {
     name: string
-    members: Array<Member>
+    members: Array<GithubUser>
     description: string
     startDate: Date
     finishDate: Date
 
     constructor(
         name: string,
-        members: Array<Member>,
+        members: Array<GithubUser>,
         description: string,
         startDate: Date,
         finishDate: Date
