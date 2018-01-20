@@ -42,7 +42,8 @@ export class AdminComponent implements OnInit {
       duration: 2000,
     });
   }
-  openDialog(user: any, index: number): void {
+  openEditDialog(user: any, index: number): void {
+    let auxiliar = user
     let dialogRef = this.dialog.open(EditDialogComponent, {
       width: '250px',
       data: { user: user }
@@ -50,9 +51,10 @@ export class AdminComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log(result)
-      if(result !== undefined){
+      if((result !== undefined) && (result !== auxiliar)){
         this.data.githubUsers[index] = result
         this.githubUsers = this.data.githubUsers
+        this.data.updateUser(this.data.getMember(user), result)
         this.openSnackBar("Usuario editado correctamente", "Ok")
       }
     })

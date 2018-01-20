@@ -1,6 +1,6 @@
 import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { environment } from '../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Member } from './models/Member';
 import { MemberResponse } from './models/MemberResponse';
 
@@ -31,12 +31,45 @@ export class DataService implements OnInit, OnDestroy {
       )
   }
 
+  /**
+   * Este metodo actualiza un miembro en la BD
+   */
+  updateUser(member: any, new_github_user) {
+    let params = new HttpParams().set('memberId', member._id);
+    console.log(`${environment.SERVER_BASE_URL}miembros/${member._id}`)
+    member.github_user = new_github_user
+    this._http.put(`${environment.SERVER_BASE_URL}miembros/${member._id}`, member)
+      .subscribe(
+        success => {
+          console.log('Miembro actualizado correctamente')
+        },
+        err => {
+          console.log(err)
+        }
+      )
+  }
+
   private extractGithubUsernames(): void {
     this.members.forEach(m => {
-      console.log(m.github_user)
+      //console.log(m.github_user)
       this.githubUsers.unshift(m.github_user)
     })
   }
+
+  /**
+   * Metodo que retornara un usuario del array miembros
+   * getMember
+   */
+  public getMember(github_user: string): any {
+    let member: any
+    this.members.forEach(m => {
+      if(m.github_user === github_user)
+        member = m
+    })
+    return member
+  }
+
+
   ngOnDestroy(){
     console.log('OnDestroy')
   }
