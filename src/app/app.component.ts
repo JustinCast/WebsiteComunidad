@@ -16,15 +16,17 @@ export class AppComponent {
   }
 
   openDialog(): void {
-    if(this.authentication.isLoggedIn){
+    if(this.authentication.isLoggedIn()){
       this.router.navigate(['admin'])
       return
     }
-    this.authService
-    .confirm('', '')
-    .subscribe(result =>{
-      console.log(result)
-    })
+    else {
+      this.authService
+      .confirm('', '')
+      .subscribe(result =>{
+        console.log(result)
+      })
+    }
   }
 
   logout(): boolean {

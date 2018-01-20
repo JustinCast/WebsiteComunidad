@@ -15,10 +15,10 @@ export class MembersComponent implements OnInit, OnDestroy {
   public members: Array<GithubUser> = []
 
   constructor(public data: DataService, public _http: HttpClient, public dialogService: DialogService) {
+    this.githubUsers = this.data.githubUsers
   }
 
   ngOnInit() {
-    this.githubUsers = this.data.githubUsers
     this.githubUsers.forEach(user => {
       this._http.get<User>(this.BASE_API_URL + user)
       .subscribe(
