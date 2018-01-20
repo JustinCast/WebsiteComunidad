@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { AuthenticationService } from './auth/authentication.service';
-import { DataService } from './data.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,10 +11,15 @@ export class AppComponent {
   constructor(
     public authService: AuthService,
     public authentication: AuthenticationService,
+    public router: Router
   ) {
   }
 
   openDialog(): void {
+    if(this.authentication.isLoggedIn){
+      this.router.navigate(['admin'])
+      return
+    }
     this.authService
     .confirm('', '')
     .subscribe(result =>{

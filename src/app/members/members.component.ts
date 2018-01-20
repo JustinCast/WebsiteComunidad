@@ -14,7 +14,8 @@ export class MembersComponent implements OnInit, OnDestroy {
   private readonly BASE_API_URL = 'https://api.github.com/users/'
   public members: Array<GithubUser> = []
 
-  constructor(public _http: HttpClient, public dialogService: DialogService, public data: DataService) { }
+  constructor(public data: DataService, public _http: HttpClient, public dialogService: DialogService) {
+  }
 
   ngOnInit() {
     this.githubUsers = this.data.githubUsers

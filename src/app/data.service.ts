@@ -1,32 +1,34 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Member } from './models/Member';
 import { MemberResponse } from './models/MemberResponse';
 
 @Injectable()
-export class DataService {
-  githubUsers: Array<any> = new Array<any>()
-  members: Array<any> = new Array<any>()
-  constructor(private _http: HttpClient) {
-    this.getData()
+export class DataService implements OnInit, OnDestroy {
+  githubUsers: Array<any>
+  members: Array<any>
+  constructor(public _http: HttpClient) {
+    this.ngOnInit()
+    this.githubUsers = new Array<any>()
+    this.members = new Array<any>()
   }
-
-  getData(): void {
+  
+  ngOnInit() {
+    console.log('ngOnInit')
     console.log(environment.SERVER_BASE_URL + 'miembros')
     this._http.get<Member[]>(environment.SERVER_BASE_URL + 'miembros')
       .subscribe(
         success => {
           // console.log(success)
           this.members = success
-          console.log(this.members)
+          //console.log(this.members)
           this.extractGithubUsernames()
         },
         err => {
           console.log(err)
         }
       )
-    
   }
 
   private extractGithubUsernames(): void {
@@ -34,5 +36,8 @@ export class DataService {
       console.log(m.github_user)
       this.githubUsers.unshift(m.github_user)
     })
+  }
+  ngOnDestroy(){
+    console.log('OnDestroy')
   }
 }
