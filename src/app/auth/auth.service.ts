@@ -10,7 +10,7 @@ export class AuthService {
   public confirm(title: string, message: string): Observable<boolean> {
     let dialogRef: MatDialogRef<AuthComponent>
     dialogRef = this.dialog.open(AuthComponent, {
-        width: '50%',
+        width: '70%',
         data: { name: 'Ups!' }
     }); 
     dialogRef.componentInstance.title = title
