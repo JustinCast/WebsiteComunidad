@@ -11,32 +11,34 @@
     font-weight: bold;
 }
 .footer {
-    position: relative;
+    position: fixed;
     right: 0;
     bottom: 0;
     left: 0;
     padding: 1rem;
     background-color: rgba(53,54,49, 0.7);
     text-align: center;
-    color: white
+    color: white;
+    margin-bottom: 0;
+    font-size: 12px
   }
 #go-to-projects:hover{
     background-color: #ff3547;
 }
 #home-card{
-    width: 60%;
-    background:rgba(255,255,255,0.8);
+    width: 80%;
+    //background:rgba(255,255,255,0.8);
     margin: auto;
-    margin-top: 1%;
+    margin-top: 11%;
 }
 #logo-comunidad{
-    height: 250px;
-    width: 200px;
+    height: 70px;
+    width: 50px;
     margin: auto
 }
 #logo-tec{
-    height: 200px;
-    width: 340px;
+    height: 100px;
+    width: 200px;
     margin: auto
 }
 #img-container{
