@@ -1,6 +1,6 @@
 <div id="admin-container" class="container card">
   <mat-list style="width: 100%; padding: 0; margin-bottom: 1%">
-    <mat-list-item class="card" style="font-size: 15px; margin-top: 1%;" *ngFor="let u of githubUsers; let index = index">
+    <mat-list-item class="card" style="font-size: 15px; margin-top: 1%;" *ngFor="let u of githubUsers | paginate: { itemsPerPage: 9, currentPage: p }; let index = index">
       <div>
         <p>{{u}}</p>
       </div>
@@ -15,3 +15,4 @@
     </mat-list-item>
   </mat-list>
 </div>
+<pagination-controls style="text-align: center; color: white; background: #424242" (pageChange)="p = $event"></pagination-controls>

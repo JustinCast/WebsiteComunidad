@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { 
   MatSnackBar, MatDialog 
@@ -12,7 +12,7 @@ import { YesOrNoService } from '../yes-or-no/yes-or-no.service';
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.scss']
 })
-export class AdminComponent implements OnInit {
+export class AdminComponent implements OnInit, AfterViewInit {
   githubUsers: Array<any>
   constructor(
     public data: DataService, 
@@ -23,6 +23,18 @@ export class AdminComponent implements OnInit {
 
   ngOnInit() {
     this.githubUsers = this.data.githubUsers
+  }
+
+  ngAfterViewInit() {
+    /**
+     * lo siguiente es necesario para quitar el padding por defecto que trae la libreria para paginació
+     */ 
+    let style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = '.zero-padding { padding: 0; background-color: #424242 }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    let ul = document.getElementsByClassName("ngx-pagination")
+    ul[0].classList.add('zero-padding')
   }
 
   deleteUser(index: number) {
