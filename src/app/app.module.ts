@@ -20,6 +20,7 @@ import {
   MatInputModule
 } from "@angular/material";
 import 'hammerjs';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogService } from './dialog/dialog.service';
 import { ErrorHandleComponent } from './error-handle/error-handle.component';
@@ -63,7 +64,8 @@ import { ProjectsComponent } from './projects/projects.component';
     FormsModule, 
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    NgxPaginationModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
