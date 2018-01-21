@@ -1,4 +1,4 @@
-import { Component,OnInit, OnDestroy, Input } from '@angular/core';
+import { Component,OnInit, OnDestroy, Input, AfterViewInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { GithubUser } from '../models/GithubUser';
 import { User } from '../models/User';
@@ -9,7 +9,7 @@ import { DataService } from '../data.service';
   templateUrl: './members.component.html',
   styleUrls: ['./members.component.scss'],
 })
-export class MembersComponent implements OnInit, OnDestroy {
+export class MembersComponent implements OnInit, OnDestroy, AfterViewInit {
   githubUsers: Array<any>
   private readonly BASE_API_URL = 'https://api.github.com/users/'
   public members: Array<GithubUser> = []
@@ -42,6 +42,19 @@ export class MembersComponent implements OnInit, OnDestroy {
       )
     });
   }
+
+  ngAfterViewInit() {
+    /**
+     * lo siguiente es necesario para quitar el padding por defecto que trae la libreria para paginació
+     */ 
+    let style = document.createElement('style');
+    style.type = 'text/css';
+    style.innerHTML = '.zero-padding { padding: 0; background-color: #424242 }';
+    document.getElementsByTagName('head')[0].appendChild(style);
+    let ul = document.getElementsByClassName("ngx-pagination")
+    ul[0].classList.add('zero-padding')
+  }
+
   ngOnDestroy() {
 
   }
