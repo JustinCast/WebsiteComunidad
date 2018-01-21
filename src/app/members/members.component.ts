@@ -53,6 +53,15 @@ export class MembersComponent implements OnInit, OnDestroy, AfterViewInit {
     document.getElementsByTagName('head')[0].appendChild(style);
     let ul = document.getElementsByClassName("ngx-pagination")
     ul[0].classList.add('zero-padding')
+
+    document.body.style.background = '#424242'
+
+    // let removeBackground = document.createElement('style')
+    // removeBackground.type = 'text/css'
+    // removeBackground.innerHTML = '.remove-background { background-color: #424242 }';
+    // document.getElementsByTagName('head')[0].appendChild(removeBackground)
+    // let html = document.getElementsByTagName('body')
+    // (<HTMLElement>html).classList.add('remove-background')
   }
 
   ngOnDestroy() {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import { AuthService } from './auth/auth.service';
 import { AuthenticationService } from './auth/authentication.service';
 import { Router } from '@angular/router';
@@ -7,12 +7,16 @@ import { Router } from '@angular/router';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   constructor(
     public authService: AuthService,
     public authentication: AuthenticationService,
     public router: Router
   ) {
+  }
+  
+  ngAfterViewInit(): void {
+    //document.body.style.backgroundImage = "url('../assets/mac.jpg');"
   }
 
   openDialog(): void {
