@@ -1,30 +1,36 @@
 #members-list{
     background-color: #424242;
-    list-style-type: none;
-    padding: 0;
-    text-align: center 
+    width: 90%;
+    text-align: center;
+    margin: auto;
+    padding: 0
 }
 .members-li{
+    list-style-type: none;
+    width: 90%;
+    cursor: pointer;
     text-align: center;
-    width: 15%;
-    display: inline-block;
-    margin-left: 1% ;
-    margin-top: 1%;
+    margin: auto;
+    margin-bottom: 1.5%
+}
+#card-body{
+    height: 10%;
 }
 .avatar{
-    width: 50%;
-    height: 50%;
+    width: 25%;
+    height: 5%;
     margin: auto;
-    border-radius: 50px;
-    margin-top: 5% 
+    border-radius: 140px;
+    margin-top: 0 
 }
 #details-list{
     list-style-type: none;
     padding: 0; 
+    margin-top: 0%;
 }
 .details-li{
     display: inline-block;
-    font-size: 10px
+    font-size: 16px
 }
 p{
     font-size: 13px
@@ -33,7 +39,6 @@ p{
     border-radius: 50px;
     font-size: 1px; 
 }
-// .pagination{
-//     background-color: #424242;
-//     color: white
-// }
+h6{
+    margin-top: 0.5%
+}

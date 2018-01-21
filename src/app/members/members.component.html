@@ -1,24 +1,26 @@
 <ul id="members-list">
-  <li class="card container members-li" *ngFor="let m of members | paginate: { itemsPerPage: 4, currentPage: p }">
-    <img class="avatar" src="{{m.pictureUrl}}" alt="Picture">
-    <h6>{{m.name}}</h6>
-    <i><small><strong>Bio: </strong>{{m.aboutDescription}}</small></i>
-    <p><strong>Grupo: </strong>{{m.company}}</p>
-    <hr style="background-color: white; border-top: line 1px">
-    <ul id="details-list">
-      <li class="details-li"><i class="fa fa-users" aria-hidden="true"></i> {{m.followers}} </li>
-      |
-      <li class="details-li"><i class="fa fa-user" aria-hidden="true"></i> {{m.following}} </li>
-      |
-      <li class="details-li"><i class="fa fa-folder" aria-hidden="true"></i> {{m.repos}} </li>
-      |
-      <li class="details-li"><i class="fa fa-file-text" aria-hidden="true"></i> {{m.gists}} </li>
-      |
-      <button mat-icon-button mat-button color="accent" (click)="openDialog()">
-          <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon>
-      </button>
-    </ul>
-    <a href="https://github.com/{{m.userName}}" class="btn btn-deep-purple btn-sm">Ver en Github</a>
+  <li class="card members-li" *ngFor="let m of members | paginate: { itemsPerPage: 4, currentPage: p }">
+    <div id="card-body" class="card-body">
+      <img class="avatar" src="{{m.pictureUrl}}" alt="Picture">
+      <h6>{{m.name}}</h6>
+      <i><small><strong>Bio: </strong>{{m.aboutDescription}}</small></i>
+      <p><strong>Grupo: </strong>{{m.company}}</p>
+      <hr style="background-color: white; border-top: line 1px">
+      <ul id="details-list">
+        <li class="details-li"><i class="fa fa-users" aria-hidden="true"></i> {{m.followers}} </li>
+        |
+        <li class="details-li"><i class="fa fa-user" aria-hidden="true"></i> {{m.following}} </li>
+        |
+        <li class="details-li"><i class="fa fa-folder" aria-hidden="true"></i> {{m.repos}} </li>
+        |
+        <li class="details-li"><i class="fa fa-file-text" aria-hidden="true"></i> {{m.gists}} </li>
+        |
+        <button mat-icon-button mat-button color="accent" (click)="openDialog()">
+            <mat-icon aria-label="Example icon-button with a heart icon">more_vert</mat-icon>
+        </button>
+      </ul>
+      <a href="https://github.com/{{m.userName}}" style="margin-bottom: 0" class="btn btn-deep-purple btn-sm">Ver en Github</a>
+    </div>
   </li>
 </ul>
 <pagination-controls style="text-align: center; color: white; background: #424242" (pageChange)="p = $event"></pagination-controls>
