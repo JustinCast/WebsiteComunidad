@@ -7,11 +7,11 @@ import { ProjectsService } from './projects.service';
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
-  providers: [ProjectsService]
 })
 export class ProjectsComponent implements OnInit {
   readonly projects: Array<Project>
   constructor(public projectService: ProjectsService) { 
+    this.projects = projectService.projects
   }
 
   ngOnInit() {

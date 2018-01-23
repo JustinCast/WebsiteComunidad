@@ -62,8 +62,10 @@ export class DataService {
   public getMember(github_user: string): any {
     let member: any
     this.members.forEach(m => {
-      if(m.github_user === github_user)
+      if(m.github_user === github_user){
         member = m
+        return
+      }
     })
     return member
   }

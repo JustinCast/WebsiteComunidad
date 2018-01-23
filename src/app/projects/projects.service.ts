@@ -6,13 +6,18 @@ import { environment } from '../../environments/environment';
 @Injectable()
 export class ProjectsService {
   projects: Array<Project>
-  constructor(public _http: HttpClient) { }
+  constructor(public _http: HttpClient) { 
+    this.getProjectsRequest()
+  }
 
   getProjectsRequest() {
-    this._http.get<Project>(environment.SERVER_BASE_URL)
+    this._http.get<Project[]>(`${environment.SERVER_BASE_URL}proyectos`)
       .subscribe(
         success => {
-
+          this.projects = success
+        },
+        err => {
+          console.log(err)
         }
       )
   }

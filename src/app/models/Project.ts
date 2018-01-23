@@ -1,7 +1,7 @@
 import { GithubUser } from "./GithubUser";
 
 export class Project {
-    
+
     constructor(
         _id: string,
         nombre: string,

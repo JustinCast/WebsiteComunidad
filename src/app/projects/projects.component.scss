@@ -1,0 +1,35 @@
+#projects {
+    padding: 0;
+    margin: auto
+}
+.project {
+    list-style-type: none;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    margin-top: 1%;
+    padding-top: 0.5%
+}
+#members{
+    padding: 0;
+    margin: auto;
+    margin-top:0; 
+    background-color: #073985;
+    color: white;
+    width: 40%;
+}
+.member{
+    text-align: center;
+    list-style-type: circle;
+}
+#details{
+    margin: auto;
+    padding: 0;
+    border: solid 1px dotted
+}
+.detail{
+    list-style-type: none
+}
+h3{
+    margin-top: 1%
+}

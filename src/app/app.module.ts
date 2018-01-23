@@ -34,6 +34,7 @@ import { AuthService } from './auth/auth.service';
 import { AUTH_PROVIDERS } from './auth/authentication.service';
 import { LogguedInGuard } from './auth/loggued-in.guard';
 import { ProjectsComponent } from './projects/projects.component';
+import { ProjectsService } from './projects/projects.service';
 
 
 @NgModule({
@@ -75,7 +76,8 @@ import { ProjectsComponent } from './projects/projects.component';
     YesOrNoService,
     AuthService,
     AUTH_PROVIDERS,
-    LogguedInGuard
+    LogguedInGuard,
+    ProjectsService
   ],
   entryComponents: [
     DialogComponent,
