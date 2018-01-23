@@ -1,24 +1,39 @@
 <ul id="projects">
     <li class="card project" *ngFor="let p of projects | paginate: { itemsPerPage: 3, currentPage: pag }">
         <h3 class="card-title"><strong>{{p.nombre}}</strong></h3>
-        <div class="card-body">
+        <div id="card-body" class="card-body">
             <h5>{{p.descripcion}}</h5>
-            <ul id="details" class="list-group">
-                <li class="list-group-item detail">
-                    Fecha Inicio: 
-                    <span class="badge blue darken-4 badge-pill">{{p.fecha_inicio | date:'fullDate':'':'Es'}}</span>
+            <mat-accordion>
+                <mat-expansion-panel (opened)="panelOpenState = true"
+                (closed)="panelOpenState = false">
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            Info del proyecto
+                        </mat-panel-title>
+                        <mat-panel-description>
+                            {{panelOpenState ? 'Cerrar' : 'Abrir'}}
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <ul id="details" class="list-group">
+                        <li class="list-group-item detail">
+                            Fecha Inicio: 
+                            <span class="badge blue darken-4 badge-pill">{{p.fecha_inicio | date:'fullDate':'':'Es'}}</span>
+                            <br>
+                            Estado:
+                            <span class="card-text"><strong>{{p.estado}}</strong></span>
+                        </li>
+                    </ul>
                     <br>
-                    Estado:
-                    <span class="card-text"><strong>{{p.estado}}</strong></span>
-                </li>
-            </ul>
-            <p class="card-text" style="margin: 1% 0 0.5% 0"><strong>Integrantes</strong></p>
-            <small>(Enlace a Github)</small>
-            <ul id="members" class="list-group">
-                <li class="member list-group-item" *ngFor="let m of p.extractMembers">
-                    <a href="https://github.com/{{m.github_user}}"> {{m.nombre}} {{m.apellidos}} </a>
-                </li>
-            </ul>
+                    <mat-list id="members">
+                        <p class="card-text" style="margin: 1% 0 0.5% 0"><strong>Integrantes</strong></p>
+                        <small>(Enlace a Github)</small>
+                        <mat-divider></mat-divider>
+                        <mat-list-item *ngFor="let m of p.extractMembers">
+                            <a href="https://github.com/{{m.github_user}}"><strong> {{m.nombre}} {{m.apellidos}} </strong></a>
+                        </mat-list-item>
+                    </mat-list>
+                </mat-expansion-panel>
+            </mat-accordion>
         </div>
     </li>
 </ul>

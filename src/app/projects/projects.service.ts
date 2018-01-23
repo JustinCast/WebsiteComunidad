@@ -43,7 +43,5 @@ export class ProjectsService {
         })
       })
     })
-    console.log(this.projects)
   }
-
 }

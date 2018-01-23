@@ -17,7 +17,8 @@ import {
   MatListModule,
   MatSnackBarModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatChipsModule
 } from "@angular/material";
 import 'hammerjs';
 import { registerLocaleData } from '@angular/common';
@@ -69,6 +70,7 @@ registerLocaleData(es, 'Es');
     MatFormFieldModule,
     MatInputModule,
     NgxPaginationModule,
+    MatChipsModule
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
