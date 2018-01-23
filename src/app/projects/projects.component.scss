@@ -14,14 +14,14 @@
     padding: 0;
     margin: auto;
     margin-top: 0.5%;
-    width: 50%;
+    width: 100%;
     border: 1px solid #EEEEEE
 }
 .member{
     list-style-type: none;
     text-align: rig;
     color: black;
-    max-width: 50%;
+    width: 100%;
     margin: auto;
     padding: 0
 }
@@ -38,6 +38,10 @@ h3{
     margin-top: 1%;
     margin-bottom: 0
 }
-.member:hover {
-    background: #EEEEEE;
+a{
+    color: #212121
+}
+a:hover {
+    color: rgb(45, 45, 233);
+    text-decoration: underline;
 }
