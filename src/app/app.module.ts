@@ -20,6 +20,8 @@ import {
   MatInputModule
 } from "@angular/material";
 import 'hammerjs';
+import { registerLocaleData } from '@angular/common';
+import es from '@angular/common/locales/Es';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogService } from './dialog/dialog.service';
@@ -36,7 +38,7 @@ import { LogguedInGuard } from './auth/loggued-in.guard';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from './projects/projects.service';
 
-
+registerLocaleData(es, 'Es');
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,7 +68,7 @@ import { ProjectsService } from './projects/projects.service';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    NgxPaginationModule
+    NgxPaginationModule,
   ],
   schemas: [ NO_ERRORS_SCHEMA ],
   bootstrap: [AppComponent],
@@ -77,7 +79,7 @@ import { ProjectsService } from './projects/projects.service';
     AuthService,
     AUTH_PROVIDERS,
     LogguedInGuard,
-    ProjectsService
+    ProjectsService,
   ],
   entryComponents: [
     DialogComponent,

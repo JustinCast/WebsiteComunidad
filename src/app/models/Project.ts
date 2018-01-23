@@ -1,15 +1,16 @@
 import { GithubUser } from "./GithubUser";
+import { Member } from "./Member";
 
 export class Project {
-
+    public extractMembers: Array<Member>
     constructor(
-        _id: string,
-        nombre: string,
-        descripcion: string,
-        fecha_inicio: Date,
-        estado: Date,
-        miembros: Array<any>
+        public _id: string,
+        public nombre: string,
+        public descripcion: string,
+        public fecha_inicio: Date,
+        public estado: Date,
+        public miembros: Array<any>
     ) { 
-
+        this.extractMembers = new Array<Member>()
     }
 }
