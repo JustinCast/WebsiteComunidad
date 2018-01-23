@@ -38,6 +38,7 @@ import { AUTH_PROVIDERS } from './auth/authentication.service';
 import { LogguedInGuard } from './auth/loggued-in.guard';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from './projects/projects.service';
+import { ProjectAdminComponent } from './project-admin/project-admin.component';
 
 registerLocaleData(es, 'Es');
 @NgModule({
@@ -51,7 +52,8 @@ registerLocaleData(es, 'Es');
     EditDialogComponent,
     YesOrNoComponent,
     AuthComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ProjectAdminComponent
   ],
   imports: [
     BrowserModule,
