@@ -1,17 +1,15 @@
 import { GithubUser } from "./GithubUser";
 
 export class Project {
-    name: string
-    members: Array<GithubUser>
-    description: string
-    startDate: Date
-    finishDate: Date
-
+    
     constructor(
-        name: string,
-        members: Array<GithubUser>,
-        description: string,
-        startDate: Date,
-        finishDate: Date
-    ) { }
+        _id: string,
+        nombre: string,
+        descripcion: string,
+        fecha_inicio: Date,
+        estado: Date,
+        miembros: Array<any>
+    ) { 
+
+    }
 }

@@ -2,7 +2,6 @@ import { Injectable, OnInit, OnDestroy } from '@angular/core';
 import { environment } from '../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Member } from './models/Member';
-import { MemberResponse } from './models/MemberResponse';
 
 @Injectable()
 export class DataService {
@@ -12,8 +11,8 @@ export class DataService {
     this.getMembersRequest()
     this.githubUsers = new Array<any>()
     this.members = new Array<any>()
-  }
-  
+    }
+    
   getMembersRequest() {
     console.log('ngOnInit')
     console.log(environment.SERVER_BASE_URL + 'miembros')
