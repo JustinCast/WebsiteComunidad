@@ -5,16 +5,16 @@ import { Member } from './models/Member';
 import { MemberResponse } from './models/MemberResponse';
 
 @Injectable()
-export class DataService implements OnInit, OnDestroy {
+export class DataService {
   githubUsers: Array<any>
   members: Array<any>
   constructor(public _http: HttpClient) {
-    this.ngOnInit()
+    this.getMembersRequest()
     this.githubUsers = new Array<any>()
     this.members = new Array<any>()
   }
   
-  ngOnInit() {
+  getMembersRequest() {
     console.log('ngOnInit')
     console.log(environment.SERVER_BASE_URL + 'miembros')
     this._http.get<Member[]>(environment.SERVER_BASE_URL + 'miembros')

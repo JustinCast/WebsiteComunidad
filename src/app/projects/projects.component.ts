@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
 import { Project } from '../models/Project';
 import { GithubUser } from '../models/GithubUser';
+import { ProjectsService } from './projects.service';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrls: ['./projects.component.scss']
+  styleUrls: ['./projects.component.scss'],
+  providers: [ProjectsService]
 })
 export class ProjectsComponent implements OnInit {
   readonly projects: Array<Project>
-  constructor() { 
+  constructor(public projectService: ProjectsService) { 
   }
 
   ngOnInit() {
