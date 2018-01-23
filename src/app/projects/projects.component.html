@@ -1,5 +1,5 @@
 <ul id="projects">
-    <li class="card project" *ngFor="let p of projects">
+    <li class="card project" *ngFor="let p of projects | paginate: { itemsPerPage: 3, currentPage: pag }">
         <h3 class="card-title"><strong>{{p.nombre}}</strong></h3>
         <div class="card-body">
             <h5>{{p.descripcion}}</h5>
@@ -13,11 +13,14 @@
                 </li>
             </ul>
             <p class="card-text" style="margin: 1% 0 0.5% 0"><strong>Integrantes</strong></p>
+            <small>(Enlace a Github)</small>
             <ul id="members" class="list-group">
                 <li class="member list-group-item" *ngFor="let m of p.extractMembers">
-                    <strong> {{m.nombre}} {{m.apellidos}} </strong>
+                    <a href="https://github.com/{{m.github_user}}"> {{m.nombre}} {{m.apellidos}} </a>
                 </li>
             </ul>
         </div>
     </li>
 </ul>
+
+<pagination-controls style="text-align: center; color: white; background: #424242" (pageChange)="pag = $event"></pagination-controls>
