@@ -33,6 +33,38 @@ export class ProjectsService {
       )
   }
 
+  /**
+   * Este metodo actualiza un proyecto en la BD
+   * @param project - objeto proyecto
+   */
+  updateProject(project: any) {
+    this._http.put(`${environment.SERVER_BASE_URL}proyectos/${project._id}`, project)
+      .subscribe(
+        success => {
+          console.log('Proyecto actualizado correctamente actualizado correctamente')
+        },
+        err => {
+          console.log(err)
+        }
+      )
+  }
+
+  /**
+   * Metodo que retornara un projecto del array projects
+   * getProject
+   * @param projectId - ID del proyecto
+   */
+  public getProject(projectId: string): any {
+    let project: any
+    this.projects.forEach(p => {
+      if(p._id === projectId){
+        project = p
+        return
+      }
+    })
+    return project
+  }
+
   extractMembersFromID(){
     this.dataService.members.forEach(m => {
       this.projects.forEach(p => {
