@@ -21,7 +21,7 @@
                 <a class="dropdown-item waves-light" mdbRippleRadius href="#">Desarrollador</a>
                 <div class="divider dropdown-divider"></div>
                 <a class="dropdown-item waves-light" mdbRippleRadius (click)="openDialog()">Administrar Miembros</a>
-                <a class="dropdown-item waves-light" mdbRippleRadius>Administrar Proyectos</a>
+                <a class="dropdown-item waves-light" mdbRippleRadius routerLink="project-admin">Administrar Proyectos</a>
             </div>
         </li>
         <li mat-raised-button *ngIf="authentication.getUser()" (click)="logout()" class="btn danger-color btn-sm" id="logoutBtn">

@@ -5,6 +5,7 @@ import { ErrorHandleComponent } from "./error-handle/error-handle.component";
 import { AdminComponent } from "./admin/admin.component";
 import { LogguedInGuard } from "./auth/loggued-in.guard";
 import { ProjectsComponent } from "./projects/projects.component";
+import { ProjectAdminComponent } from "./project-admin/project-admin.component";
 export const ROUTES: Routes = [
     {
         path: '', redirectTo: 'home', pathMatch: 'full'
@@ -20,6 +21,9 @@ export const ROUTES: Routes = [
     },
     {
         path: 'admin', component: AdminComponent, canActivate: [LogguedInGuard]
+    },
+    {
+        path: 'project-admin', component: ProjectAdminComponent, canActivate: [LogguedInGuard]
     },
     {
         path: '**', component: ErrorHandleComponent
