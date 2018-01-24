@@ -39,6 +39,7 @@ import { LogguedInGuard } from './auth/loggued-in.guard';
 import { ProjectsComponent } from './projects/projects.component';
 import { ProjectsService } from './projects/projects.service';
 import { ProjectAdminComponent } from './project-admin/project-admin.component';
+import { EditProjectComponent } from './edit-project/edit-project.component';
 
 registerLocaleData(es, 'Es');
 @NgModule({
@@ -53,7 +54,8 @@ registerLocaleData(es, 'Es');
     YesOrNoComponent,
     AuthComponent,
     ProjectsComponent,
-    ProjectAdminComponent
+    ProjectAdminComponent,
+    EditProjectComponent
   ],
   imports: [
     BrowserModule,

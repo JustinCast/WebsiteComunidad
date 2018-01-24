@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Editar Proyecto</h1>
+<div id="edit-dialog-container" mat-dialog-content>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.nombre">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.descripcion">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.fecha_inicio">
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()" color="warn">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial color="primary">Ok</button>
+</div>
