@@ -43,11 +43,12 @@ export class ProjectAdminComponent implements OnInit, AfterViewInit {
     let dialogRef = this.dialog.open(EditProjectComponent, {
       width: '35%',
       data: { 
+        _id: project._id, 
         nombre: project.nombre,
         descripcion: project.descripcion,
         fecha_inicio: project.fecha_inicio,
         estado: project.estado,
-        miembros: project.extractMembers 
+        miembros: project.extractMembers,
       }
     });
 
@@ -55,7 +56,7 @@ export class ProjectAdminComponent implements OnInit, AfterViewInit {
       console.log(result)
       if((result !== undefined) && (result !== auxiliar)){
         this._projectService.projects[index] = result
-        this._projectService.updateProject(this._projectService.getProject(project))
+        this._projectService.updateProject(this._projectService.getProject(project._id))
         this.openSnackBar("Proyecto editado correctamente", "Ok")
       }
     })
