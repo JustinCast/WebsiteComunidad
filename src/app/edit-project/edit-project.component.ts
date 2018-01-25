@@ -11,7 +11,6 @@ export class EditProjectComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<EditProjectComponent>,
     @Inject(MAT_DIALOG_DATA) public project: any) { 
-      console.log(project.project)
     }
 
   onNoClick(): void {

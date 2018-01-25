@@ -8,7 +8,7 @@ export class Project {
         public nombre: string,
         public descripcion: string,
         public fecha_inicio: Date,
-        public estado: Date,
+        public estado: string,
         public miembros: Array<any>
     ) { 
         this.extractMembers = new Array<Member>()

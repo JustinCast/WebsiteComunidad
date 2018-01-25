@@ -45,7 +45,9 @@ export class ProjectAdminComponent implements OnInit, AfterViewInit {
       data: { 
         nombre: project.nombre,
         descripcion: project.descripcion,
-        fecha_inicio: project.fecha_inicio 
+        fecha_inicio: project.fecha_inicio,
+        estado: project.estado,
+        miembros: project.extractMembers 
       }
     });
 

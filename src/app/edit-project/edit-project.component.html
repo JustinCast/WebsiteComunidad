@@ -3,12 +3,25 @@
   <mat-form-field>
     <input matInput [(ngModel)]="project.nombre">
   </mat-form-field>
-  <mat-form-field>
-    <textarea matInput [(ngModel)]="project.descripcion"></textarea>
+  <mat-form-fiekld>
+    <textarea matInput [(ngModel)]="project.descripcion" placeholder="Descripción"></textarea>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="project.fecha_inicio">
+    <input matInput [(ngModel)]="project.fecha_inicio" placeholder="Fecha Inicio">
   </mat-form-field>
+  <br><br>
+  <mat-form-field>
+    <input matInput [(ngModel)]="project.estado" placeholder="Estado">
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-toolbar>
+    <mat-list>
+      <h5><strong>Desarrolladores del proyecto</strong></h5>
+      <mat-divider></mat-divider>
+      <mat-list-item *ngFor="let p of project.miembros">{{p.nombre}} {{p.apellidos}}</mat-list-item>
+    </mat-list>
+  </mat-toolbar>
 </div>
 <div id="btn-container" mat-dialog-actions>
   <button mat-button (click)="onNoClick()" color="warn">Cancelar</button>
