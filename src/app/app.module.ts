@@ -91,7 +91,8 @@ registerLocaleData(es, 'Es');
     DialogComponent,
     EditDialogComponent,
     YesOrNoComponent,
-    AuthComponent
+    AuthComponent,
+    EditProjectComponent
   ],
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { ProjectsService } from '../projects/projects.service';
 import { MatSnackBar, MatDialog } from '@angular/material';
 import { YesOrNoService } from '../yes-or-no/yes-or-no.service';
+import { EditProjectComponent } from '../edit-project/edit-project.component';
 
 @Component({
   selector: 'app-project-admin',
@@ -39,9 +40,13 @@ export class ProjectAdminComponent implements OnInit, AfterViewInit {
   }
   openEditDialog(project: any, index: number): void {
     let auxiliar = project
-    let dialogRef = this.dialog.open(EditDialogComponent, {
-      width: '250px',
-      data: { project: project }
+    let dialogRef = this.dialog.open(EditProjectComponent, {
+      width: '35%',
+      data: { 
+        nombre: project.nombre,
+        descripcion: project.descripcion,
+        fecha_inicio: project.fecha_inicio 
+      }
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -49,7 +54,19 @@ export class ProjectAdminComponent implements OnInit, AfterViewInit {
       if((result !== undefined) && (result !== auxiliar)){
         this._projectService.projects[index] = result
         this._projectService.updateProject(this._projectService.getProject(project))
-        this.openSnackBar("Usuario editado correctamente", "Ok")
+        this.openSnackBar("Proyecto editado correctamente", "Ok")
+      }
+    })
+  }
+
+  deleteProject(index: number) {
+    this.yesOrNoDialog
+    .confirm('', '')
+    .subscribe(result =>{
+      console.log(result)
+      if(result) {  
+        this._projectService.projects.splice(index, 1)
+        this.openSnackBar("Usuario eliminado", "Ok")
       }
     })
   }

@@ -1,16 +1,16 @@
-<h1 mat-dialog-title>Editar Proyecto</h1>
-<div id="edit-dialog-container" mat-dialog-content>
+<h1 mat-dialog-title>{{project.nombre}}</h1>
+<div id="edit-project-container" mat-dialog-content>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.nombre">
+    <input matInput [(ngModel)]="project.nombre">
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.descripcion">
+    <textarea matInput [(ngModel)]="project.descripcion"></textarea>
   </mat-form-field>
   <mat-form-field>
-    <input matInput [(ngModel)]="data.fecha_inicio">
+    <input matInput [(ngModel)]="project.fecha_inicio">
   </mat-form-field>
 </div>
-<div mat-dialog-actions>
+<div id="btn-container" mat-dialog-actions>
   <button mat-button (click)="onNoClick()" color="warn">Cancelar</button>
   <button mat-button [mat-dialog-close]="data" cdkFocusInitial color="primary">Ok</button>
 </div>
