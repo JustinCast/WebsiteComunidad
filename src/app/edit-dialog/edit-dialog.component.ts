@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { AdminComponent } from '../admin/admin.component';
 
 @Component({
   selector: 'app-edit-dialog',

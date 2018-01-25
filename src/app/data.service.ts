@@ -34,8 +34,6 @@ export class DataService {
    * Este metodo actualiza un miembro en la BD
    */
   updateUser(member: any, new_github_user) {
-    let params = new HttpParams().set('memberId', member._id);
-    console.log(`${environment.SERVER_BASE_URL}miembros/${member._id}`)
     member.github_user = new_github_user
     this._http.put(`${environment.SERVER_BASE_URL}miembros/${member._id}`, member)
       .subscribe(

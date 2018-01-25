@@ -3,7 +3,7 @@
   <mat-form-field>
     <input matInput [(ngModel)]="project.nombre">
   </mat-form-field>
-  <mat-form-fiekld>
+  <mat-form-field>
     <textarea matInput [(ngModel)]="project.descripcion" placeholder="Descripción"></textarea>
   </mat-form-field>
   <mat-form-field>
@@ -25,5 +25,5 @@
 </div>
 <div id="btn-container" mat-dialog-actions>
   <button mat-button (click)="onNoClick()" color="warn">Cancelar</button>
-  <button mat-button [mat-dialog-close]="data" cdkFocusInitial color="primary">Ok</button>
+  <button mat-button [mat-dialog-close]="project" cdkFocusInitial color="primary">Ok</button>
 </div>
