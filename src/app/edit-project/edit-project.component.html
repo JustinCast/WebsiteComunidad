@@ -19,7 +19,7 @@
     <mat-list>
       <h5><strong>Desarrolladores del proyecto</strong></h5>
       <mat-divider></mat-divider>
-      <mat-list-item *ngFor="let p of project.miembros">{{p.nombre}} {{p.apellidos}}</mat-list-item>
+      <mat-list-item *ngFor="let p of project.extractMembers">{{p.nombre}} {{p.apellidos}}</mat-list-item>
     </mat-list>
   </mat-toolbar>
 </div>
